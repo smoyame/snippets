@@ -1,0 +1,8 @@
+:root {
+	--ff-primary: 'Work Sans', Helvetica, Arial, sans-serif;
+	--ff-secondary: 'Space Mono', monospace;
+
+	--unit-base: 1.2rem;
+
+	font-family: var(--ff-primary);
+}
