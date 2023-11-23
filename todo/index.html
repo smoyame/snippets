@@ -10,9 +10,18 @@
 
 	<body>
 		<div class="wrapper">
-			<header class="header">Items:</header>
+			<header class="header">What do you need to do today?</header>
 			<main class="main">
-				Content
+				<div class="input-wrapper">
+					<label for="todo" class="label">New item:</label>
+					<input type="text" name="todo" id="todo" placeholder="Ex: Wash dishes" />
+					<button type="button">+</button>
+				</div>
+				<div class="todo-wrapper">
+					<ul class="todo-list">
+						<li class="todo-item"><input type="checkbox" name="todo" id="todo" class="todo-checkbox" /></li>
+					</ul>
+				</div>
 			</main>
 		</div>
 		<script src="script.js"></script>
