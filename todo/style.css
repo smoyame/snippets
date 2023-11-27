@@ -4,6 +4,9 @@
 
 	--unit-base: 1.25rem;
 	--unit-half: calc(var(--unit-base) * .5);
+	--unit-2x: calc(var(--unit-base) * 2);
+
+	--radius: .25rem;
 
 	font-family: var(--ff-primary);
 	font-size: var(--unit-base);
@@ -23,6 +26,13 @@ button {
 
 ul {
 	list-style-type: none;
+}
+
+.wrapper {
+	margin: var(--unit-base);
+	padding: var(--unit-base);
+	background-color: lightgray;
+	border-radius: var(--radius);
 }
 
 .todo-item-wrapper {
