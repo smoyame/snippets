@@ -36,6 +36,13 @@ ul {
 	border-radius: var(--radius);
 }
 
+.input-wrapper {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px solid gray;
+	padding-bottom: var(--unit-base);
+}
+
 .todo-item-wrapper {
 	display: inline-flex;
 	gap: var(--unit-half);
