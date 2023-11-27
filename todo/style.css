@@ -32,14 +32,14 @@ ul {
 .wrapper {
 	margin: var(--unit-base);
 	padding: var(--unit-base);
-	background-color: lightgray;
+	background-color: #eeeeee;
 	border-radius: var(--radius);
 }
 
 .input-wrapper {
 	display: flex;
 	flex-direction: column;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid #cecece;
 	padding-bottom: var(--unit-base);
 }
 
