@@ -11,6 +11,17 @@ function store(value) {
 	list.push(item);
 }
 
+function move(target) {
+	let currentItem = target.parentElement.parentElement;
+	let pendingList = document.querySelector('.pending .todo-list');
+	let completedList = document.querySelector('.complete .todo-list');
+	if (target.checked) {
+		completedList.appendChild(currentItem)
+	} else {
+		pendingList.appendChild(currentItem)
+	}
+}
+
 const listNode = document.querySelector('.todo-list');
 function add() {
 	let todoText = document.querySelector('#todo').value.match(/[^\s](?:.*)(?=\b)/g) ? document.querySelector('#todo').value : null;
@@ -29,6 +40,7 @@ function add() {
 		input.classList.add("todo-checkbox")
 		input.setAttribute("type", "checkbox")
 		input.setAttribute("name", "todo")
+		input.setAttribute("onclick", 'move(this)')
 
 		span.appendChild(valueNode);
 		label.appendChild(input);
