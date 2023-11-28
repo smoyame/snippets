@@ -55,6 +55,8 @@ ul {
 	font-size: var(--fsz-small);
 	margin-bottom: var(--unit-base);
 	padding: var(--unit-half) var(--unit-half) 0;
+	color: gray;
+	font-weight: 500;
 }
 
 .input-wrapper {
