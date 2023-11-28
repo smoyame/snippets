@@ -11,6 +11,10 @@
 	--fsz-small: calc(var(--unit-base) * .65);
 	--fsz-medium: calc(var(--unit-base) * 1.2);
 
+	--ls-base: initial;
+	--ls-small: 0em;
+	--ls-medium: -0.0325em;
+
 	--radius: .25rem;
 
 	font-family: var(--ff-primary);
@@ -58,6 +62,7 @@ ul {
 	padding: var(--unit-half) var(--unit-half) 0;
 	color: gray;
 	font-weight: 500;
+	letter-spacing: var(--ls-small);
 }
 
 .input-wrapper {
@@ -72,6 +77,7 @@ ul {
 .todo-heading {
 	font-size: var(--fsz-medium);
 	font-weight: 600;
+	letter-spacing: var(--ls-medium);
 }
 
 .todo-input {
