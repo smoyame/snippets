@@ -9,6 +9,7 @@
 
 	--fsz-base: var(--unit-base);
 	--fsz-small: calc(var(--unit-base) * .65);
+	--fsz-medium: calc(var(--unit-base) * 1.2);
 
 	--radius: .25rem;
 
@@ -69,6 +70,7 @@ ul {
 }
 
 .todo-heading {
+	font-size: var(--fsz-medium);
 	font-weight: 600;
 }
 
