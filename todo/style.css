@@ -80,8 +80,23 @@ ul {
 	flex: 1 1 100%;
 }
 
-.todo-list {
+.todo-wrapper {
 	margin-top: var(--unit-half);
+}
+
+.todo-list {
+	display: flex;
+	flex-direction: column;
+	min-height: 3rem;
+	justify-content: center;
+}
+
+.todo-list:empty::before {
+	content: 'Your list is empty!';
+	display: block;
+	text-align: center;
+	height: 100%;
+	color: gray;
 }
 
 .todo-item-wrapper {
