@@ -6,6 +6,9 @@
 	--unit-half: calc(var(--unit-base) * .5);
 	--unit-2x: calc(var(--unit-base) * 2);
 
+	--fsz-base: var(--unit-base);
+	--fsz-small: calc(var(--unit-base) * .65);
+
 	--radius: .25rem;
 
 	font-family: var(--ff-primary);
