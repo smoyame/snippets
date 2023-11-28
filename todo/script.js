@@ -27,3 +27,11 @@ function addToList() {
 
 	listNode.appendChild(li)
 }
+
+let today = new Date();
+let formattedDate = today.toLocaleDateString("en-us", {
+	weekday: "long",
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+});
