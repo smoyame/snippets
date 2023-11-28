@@ -39,6 +39,10 @@ ul {
 	border-radius: var(--radius);
 }
 
+.header {
+	font-size: var(--fsz-small);
+}
+
 .input-wrapper {
 	display: flex;
 	flex-direction: column;
