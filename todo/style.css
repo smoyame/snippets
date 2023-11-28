@@ -54,6 +54,7 @@ ul {
 .header {
 	font-size: var(--fsz-small);
 	margin-bottom: var(--unit-base);
+	padding: var(--unit-half) var(--unit-half) 0;
 }
 
 .input-wrapper {
@@ -62,6 +63,7 @@ ul {
 	gap: var(--unit-quarter);
 	border-bottom: 1px solid #cecece;
 	padding-bottom: var(--unit-base);
+	padding-inline: var(--unit-half);
 }
 
 .todo-heading {
@@ -81,4 +83,5 @@ ul {
 .todo-item-wrapper {
 	display: flex;
 	gap: var(--unit-half);
+	padding: var(--unit-half);
 }
