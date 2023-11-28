@@ -51,3 +51,8 @@ function add() {
 		document.querySelector('#todo').value = ''
 	}
 }
+
+function remove(target) {
+	let items = document.querySelectorAll('[name="todo"]:checked');
+	items.forEach((element) => { element.parentElement.parentElement.remove() })
+}
