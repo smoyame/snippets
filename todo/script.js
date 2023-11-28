@@ -35,3 +35,4 @@ let formattedDate = today.toLocaleDateString("en-us", {
 	month: "long",
 	day: "numeric",
 });
+document.querySelector(".header").textContent = formattedDate
