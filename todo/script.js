@@ -43,7 +43,7 @@ function add() {
 		li.appendChild(label);
 
 		listNode.appendChild(li)
-		store(todoText, false)
+		store(todoText)
 
 		document.querySelector('#todo').value = ''
 	}
