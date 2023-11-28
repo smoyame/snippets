@@ -50,6 +50,10 @@ ul {
 	padding-bottom: var(--unit-base);
 }
 
+.todo-heading {
+	font-weight: 600;
+}
+
 .todo-item-wrapper {
 	display: inline-flex;
 	gap: var(--unit-half);
