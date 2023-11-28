@@ -12,13 +12,13 @@
 		<div class="wrapper">
 			<header class="header">Today</header>
 			<main class="main">
-				<div class="input-wrapper">
+				<form class="input-wrapper" onsubmit="return false">
 					<label for="todo" class="label todo-heading">What do you need to do today?</label>
 					<div class="todo-input">
 						<input type="text" name="todo" id="todo" class="todo-input-field" placeholder="Ex: Wash dishes" />
-						<button type="button" onclick="addToList()">Add</button>
+						<button onclick="add()">Add</button>
 					</div>
-				</div>
+				</form>
 				<div class="todo-wrapper">
 					<ul class="todo-list"></ul>
 				</div>
