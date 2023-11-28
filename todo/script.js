@@ -36,4 +36,6 @@ function add() {
 
 	listNode.appendChild(li)
 	store(todoText, false)
+
+	document.querySelector('#todo').value = ''
 }
