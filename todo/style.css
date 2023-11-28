@@ -69,9 +69,7 @@ ul {
 	display: flex;
 	flex-direction: column;
 	gap: var(--unit-quarter);
-	border-bottom: 1px solid #cecece;
-	padding-bottom: var(--unit-base);
-	padding-inline: var(--unit-half);
+	padding: 0 var(--unit-half) var(--unit-half);
 }
 
 .todo-heading {
@@ -90,12 +88,10 @@ ul {
 	flex: 1 1 100%;
 }
 
-.todo-wrapper {
-	margin-top: var(--unit-half);
-}
-
-.complete {
-	margin-top: 0px;
+.complete > .todo-list:not(:empty) {
+	border-top: 1px solid lightgray;
+	padding-top: .5rem;
+	margin-top: .5rem;
 }
 
 .complete > .todo-list:empty {
@@ -114,7 +110,7 @@ ul {
 }
 
 .todo-list:empty::before {
-	content: 'Your list is empty!';
+	content: '🎊 No tasks! 🎊';
 	display: block;
 	text-align: center;
 	height: 100%;
