@@ -3,7 +3,7 @@
 let list = [];
 let todoText;
 
-function getTodo() {
+function addToList() {
 	todoText = document.querySelector('#todo').value
 	list.push(todoText);
 }
