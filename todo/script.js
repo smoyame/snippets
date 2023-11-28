@@ -4,7 +4,7 @@ const listNode = document.querySelector('.todo-list');
 let list = [];
 
 function addToList() {
-	let todoText = document.querySelector('#todo').value
+	let todoText = document.querySelector('#todo').value.match(/[^\s].*(?=\b)/g)[0];
 	let itemValue = document.createTextNode(todoText);
 
 	let li = document.createElement("li");
