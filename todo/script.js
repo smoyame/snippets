@@ -13,29 +13,31 @@ function store(value) {
 
 const listNode = document.querySelector('.todo-list');
 function add() {
-	let todoText = document.querySelector('#todo').value.match(/[^\s].*(?=\b)/g)[0];
-	let itemValue = document.createTextNode(todoText);
+	let todoText = document.querySelector('#todo').value.match(/[^\s](?:.*)(?=\b)/g) ? document.querySelector('#todo').value : null;
+	if (todoText) {
+		let valueNode = document.createTextNode(todoText);
 
-	let li = document.createElement("li");
-	let label = document.createElement("label");
-	let span = document.createElement("span");
-	let input = document.createElement("input");
+		let li = document.createElement("li");
+		let label = document.createElement("label");
+		let span = document.createElement("span");
+		let input = document.createElement("input");
 
-	li.classList.add("todo-item")
-	label.classList.add("label")
-	label.classList.add("todo-item-wrapper")
-	span.classList.add("todo-text")
-	input.classList.add("todo-checkbox")
-	input.setAttribute("type", "checkbox")
-	input.setAttribute("name", "todo")
+		li.classList.add("todo-item")
+		label.classList.add("label")
+		label.classList.add("todo-item-wrapper")
+		span.classList.add("todo-text")
+		input.classList.add("todo-checkbox")
+		input.setAttribute("type", "checkbox")
+		input.setAttribute("name", "todo")
 
-	span.appendChild(itemValue);
-	label.appendChild(input);
-	label.appendChild(span);
-	li.appendChild(label);
+		span.appendChild(valueNode);
+		label.appendChild(input);
+		label.appendChild(span);
+		li.appendChild(label);
 
-	listNode.appendChild(li)
-	store(todoText, false)
+		listNode.appendChild(li)
+		store(todoText, false)
 
-	document.querySelector('#todo').value = ''
+		document.querySelector('#todo').value = ''
+	}
 }
