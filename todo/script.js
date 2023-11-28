@@ -1,9 +1,9 @@
 // script.js
 
+const listNode = document.querySelector('.todo-list');
 let list = [];
-let todoText;
 
 function addToList() {
-	todoText = document.querySelector('#todo').value
+	let todoText = document.querySelector('#todo').value
 	list.push(todoText);
 }
