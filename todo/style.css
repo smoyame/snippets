@@ -89,7 +89,7 @@ ul {
 .todo-list {
 	display: flex;
 	flex-direction: column;
-	min-height: 3rem;
+	min-height: 2.45rem;
 	justify-content: center;
 }
 
