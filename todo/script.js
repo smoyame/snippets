@@ -1,14 +1,9 @@
 // script.js
-let list = [];
+let list = new Map();
 let id = -1;
 function store(value) {
 	id++;
-	let item = {
-		id: id,
-		complete: false,
-		value: value
-	}
-	list.push(item);
+	list.set(value, { complete: false });
 }
 
 function move(target) {
