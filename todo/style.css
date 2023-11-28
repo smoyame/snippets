@@ -113,6 +113,7 @@ ul {
 	display: flex;
 	gap: var(--unit-half);
 	padding: var(--unit-half);
+	transition: all 50ms ease;
 }
 
 .todo-item-wrapper:hover {
