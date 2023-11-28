@@ -47,6 +47,8 @@ ul {
 	padding: var(--unit-base);
 	background-color: #eeeeee;
 	border-radius: var(--radius);
+	max-width: 50ch;
+	margin-inline: auto;
 }
 
 .header {
