@@ -94,6 +94,18 @@ ul {
 	margin-top: var(--unit-half);
 }
 
+.complete {
+	margin-top: 0px;
+}
+
+.complete > .todo-list:empty {
+	min-height: 0px;
+}
+
+.complete > .todo-list:empty::before {
+	content: '';
+}
+
 .todo-list {
 	display: flex;
 	flex-direction: column;
