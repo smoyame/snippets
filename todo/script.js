@@ -52,7 +52,10 @@ function add() {
 	}
 }
 
-function remove(target) {
+function remove() {
 	let items = document.querySelectorAll('[name="todo"]:checked');
-	items.forEach((element) => { element.parentElement.parentElement.remove() })
+	items.forEach((element) => {
+		element.parentElement.parentElement.remove();
+		list.delete(element.parentElement.parentElement.innerText);
+	});
 }
