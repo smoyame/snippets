@@ -12,7 +12,7 @@ function store(value) {
 }
 
 const listNode = document.querySelector('.todo-list');
-function addToList() {
+function add() {
 	let todoText = document.querySelector('#todo').value.match(/[^\s].*(?=\b)/g)[0];
 	let itemValue = document.createTextNode(todoText);
 
