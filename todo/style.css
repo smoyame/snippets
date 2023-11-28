@@ -27,6 +27,11 @@
 	padding: 0;
 }
 
+body {
+	display: flex;
+	justify-content: center;
+}
+
 input,
 select,
 button {
@@ -48,12 +53,11 @@ ul {
 }
 
 .wrapper {
-	margin: var(--unit-base);
+	margin: var(--unit-half);
 	padding: var(--unit-half);
 	background-color: #f0f0f0;
 	border-radius: var(--radius);
 	max-width: 50ch;
-	margin-inline: auto;
 }
 
 .header {
