@@ -46,6 +46,7 @@ button {
 
 button {
 	padding-inline: var(--unit-half);
+	cursor: pointer;
 }
 
 ul {
