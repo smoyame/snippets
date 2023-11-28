@@ -9,7 +9,7 @@
 
 	--fsz-base: var(--unit-base);
 	--fsz-small: calc(var(--unit-base) * .65);
-	--fsz-medium: calc(var(--unit-base) * 1.2);
+	--fsz-medium: calc(var(--unit-base) * 1.15);
 
 	--ls-base: initial;
 	--ls-small: 0em;
