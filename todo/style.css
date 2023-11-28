@@ -105,6 +105,13 @@ ul {
 	padding: var(--unit-half);
 }
 
+.todo-item-wrapper:hover {
+	background: #fafafa;
+	cursor: pointer;
+	border-radius: calc(var(--radius) * .5);
+	filter: drop-shadow(0px 0px 4px rgb(211, 211, 211));
+}
+
 .todo-checkbox:checked,
 .todo-checkbox:checked + .todo-text {
 	opacity: .5;
