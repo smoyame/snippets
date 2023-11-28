@@ -29,6 +29,15 @@ button {
 	font-family: inherit;
 }
 
+[type="text"],
+button {
+	padding: var(--unit-quarter);
+}
+
+button {
+	padding-inline: var(--unit-half);
+}
+
 ul {
 	list-style-type: none;
 }
