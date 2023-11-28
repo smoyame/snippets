@@ -80,6 +80,10 @@ ul {
 	flex: 1 1 100%;
 }
 
+.todo-list {
+	margin-top: var(--unit-half);
+}
+
 .todo-item-wrapper {
 	display: flex;
 	gap: var(--unit-half);
