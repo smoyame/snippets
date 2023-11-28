@@ -37,12 +37,3 @@ function addToList() {
 	listNode.appendChild(li)
 	store(todoText, false)
 }
-
-let today = new Date();
-let formattedDate = today.toLocaleDateString("en-us", {
-	weekday: "long",
-	year: "numeric",
-	month: "long",
-	day: "numeric",
-});
-document.querySelector(".header").textContent = formattedDate
