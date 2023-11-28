@@ -89,3 +89,8 @@ ul {
 	gap: var(--unit-half);
 	padding: var(--unit-half);
 }
+
+.todo-checkbox:checked,
+.todo-checkbox:checked + .todo-text {
+	opacity: .5;
+}
