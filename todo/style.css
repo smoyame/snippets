@@ -3,6 +3,7 @@
 	--ff-secondary: 'Space Mono', monospace;
 
 	--unit-base: 1.25rem;
+	--unit-quarter: calc(var(--unit-base) * .25);
 	--unit-half: calc(var(--unit-base) * .5);
 	--unit-2x: calc(var(--unit-base) * 2);
 
