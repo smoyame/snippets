@@ -57,6 +57,11 @@ ul {
 	font-weight: 600;
 }
 
+.todo-input {
+	display: flex;
+	gap: var(--unit-quarter);
+}
+
 .todo-item-wrapper {
 	display: inline-flex;
 	gap: var(--unit-half);
