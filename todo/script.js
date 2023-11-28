@@ -10,10 +10,13 @@ function move(target) {
 	let currentItem = target.parentElement.parentElement;
 	let pendingList = document.querySelector('.pending .todo-list');
 	let completedList = document.querySelector('.complete .todo-list');
+	let instance = list.get(currentItem.innerText)
 	if (target.checked) {
 		completedList.appendChild(currentItem)
+		instance.complete = true;
 	} else {
 		pendingList.appendChild(currentItem)
+		instance.complete = false;
 	}
 }
 
