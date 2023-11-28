@@ -41,6 +41,7 @@ ul {
 
 .header {
 	font-size: var(--fsz-small);
+	margin-bottom: var(--unit-base);
 }
 
 .input-wrapper {
