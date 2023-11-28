@@ -1,8 +1,17 @@
 // script.js
+let list = [];
+let id = -1;
+function store(value) {
+	id++;
+	let item = {
+		id: id,
+		complete: false,
+		value: value
+	}
+	list.push(item);
+}
 
 const listNode = document.querySelector('.todo-list');
-let list = [];
-
 function addToList() {
 	let todoText = document.querySelector('#todo').value.match(/[^\s].*(?=\b)/g)[0];
 	let itemValue = document.createTextNode(todoText);
@@ -26,6 +35,7 @@ function addToList() {
 	li.appendChild(label);
 
 	listNode.appendChild(li)
+	store(todoText, false)
 }
 
 let today = new Date();
