@@ -144,3 +144,8 @@ ul {
 	opacity: .5;
 	font-weight: initial;
 }
+
+footer {
+	margin-top: var(--unit-half);
+	padding: var(--unit-half);
+}
