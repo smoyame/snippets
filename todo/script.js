@@ -56,9 +56,10 @@ function move(target) {
 function remove() {
 	let items = document.querySelectorAll('[name="todo"]:checked');
 	items.forEach((element) => {
-		element.parentElement.parentElement.remove();
-		list.delete(element.parentElement.parentElement.innerText);
-		localStorage.removeItem(element.parentElement.parentElement.innerText);
+		let li = element.parentElement.parentElement
+		li.remove();
+		list.delete(li.innerText);
+		localStorage.removeItem(li.innerText);
 	});
 }
 
