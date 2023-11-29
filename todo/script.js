@@ -21,8 +21,10 @@ function newLi() {
 	return (itemInfo)
 }
 
-const listNode = document.querySelector('.todo-list');
+const pendingList = document.querySelector('.pending .todo-list');
+const completedList = document.querySelector('.complete .todo-list');
 function add(text = '', complete = false) {
+	let listNode = complete == "false" ? pendingList : completedList;
 	let todoText = document.querySelector('#todo').value.match(/[^\s](?:.*)(?=\b)/g) ? document.querySelector('#todo').value : text ? text : null;
 	let valueNode = document.createTextNode(todoText);
 	if (todoText) {
@@ -30,6 +32,7 @@ function add(text = '', complete = false) {
 		item.span.appendChild(valueNode);
 		item.label.appendChild(item.span);
 		item.li.appendChild(item.label);
+		item.li.querySelector('input').checked = complete == "true" ? true : false;
 		listNode.appendChild(item.li);
 
 		list.set(todoText, complete);
@@ -38,8 +41,6 @@ function add(text = '', complete = false) {
 	}
 }
 
-const pendingList = document.querySelector('.pending .todo-list');
-const completedList = document.querySelector('.complete .todo-list');
 function move(target) {
 	let currentItem = target.parentElement.parentElement;
 	if (target.checked) {
@@ -66,5 +67,6 @@ function remove() {
 if (localStorage.length) {
 	Object.entries(localStorage).forEach((item) => {
 		list.set(item[0], item[1]);
+		add(item[0], item[1]);
 	})
 }
