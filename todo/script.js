@@ -23,7 +23,7 @@ function newLi() {
 
 const pendingList = document.querySelector('.pending .todo-list');
 const completedList = document.querySelector('.complete .todo-list');
-function add(text = '', complete = false) {
+function add(text = '', complete = "false") {
 	let listNode = complete == "false" ? pendingList : completedList;
 	let todoText = document.querySelector('#todo').value.match(/[^\s](?:.*)(?=\b)/g) ? document.querySelector('#todo').value : text ? text : null;
 	let valueNode = document.createTextNode(todoText);
