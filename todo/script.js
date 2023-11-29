@@ -1,10 +1,5 @@
 // script.js
 let list = new Map();
-let id = -1;
-function store(value) {
-	id++;
-	list.set(value, { complete: false });
-}
 
 function move(target) {
 	let currentItem = target.parentElement.parentElement;
@@ -13,10 +8,10 @@ function move(target) {
 	let instance = list.get(currentItem.innerText)
 	if (target.checked) {
 		completedList.appendChild(currentItem)
-		instance.complete = true;
+		list.set(currentItem.innerText, true);
 	} else {
 		pendingList.appendChild(currentItem)
-		instance.complete = false;
+		list.set(currentItem.innerText, false);
 	}
 }
 
@@ -51,7 +46,7 @@ function add(text = '', complete = false) {
 		item.li.appendChild(item.label);
 		listNode.appendChild(item.li);
 
-		store(todoText)
+		list.set(todoText, complete);
 
 		document.querySelector('#todo').value = ''
 	}
