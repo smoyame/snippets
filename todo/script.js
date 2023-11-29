@@ -20,32 +20,37 @@ function move(target) {
 	}
 }
 
+function newLi() {
+	let li = document.createElement("li");
+	let label = document.createElement("label");
+	let span = document.createElement("span");
+	let input = document.createElement("input");
+
+	li.classList.add("todo-item")
+	label.classList.add("label")
+	label.classList.add("todo-item-wrapper")
+	span.classList.add("todo-text")
+	input.classList.add("todo-checkbox")
+	input.setAttribute("type", "checkbox")
+	input.setAttribute("name", "todo")
+	input.setAttribute("onclick", 'move(this)')
+	label.appendChild(input);
+
+	let itemInfo = { li: li, span: span, label: label }
+	return (itemInfo)
+}
+
 const listNode = document.querySelector('.todo-list');
-function add() {
-	let todoText = document.querySelector('#todo').value.match(/[^\s](?:.*)(?=\b)/g) ? document.querySelector('#todo').value : null;
+function add(text = '', complete = false) {
+	let todoText = document.querySelector('#todo').value.match(/[^\s](?:.*)(?=\b)/g) ? document.querySelector('#todo').value : text ? text : null;
+	let valueNode = document.createTextNode(todoText);
 	if (todoText) {
-		let valueNode = document.createTextNode(todoText);
+		let item = newLi();
+		item.span.appendChild(valueNode);
+		item.label.appendChild(item.span);
+		item.li.appendChild(item.label);
+		listNode.appendChild(item.li);
 
-		let li = document.createElement("li");
-		let label = document.createElement("label");
-		let span = document.createElement("span");
-		let input = document.createElement("input");
-
-		li.classList.add("todo-item")
-		label.classList.add("label")
-		label.classList.add("todo-item-wrapper")
-		span.classList.add("todo-text")
-		input.classList.add("todo-checkbox")
-		input.setAttribute("type", "checkbox")
-		input.setAttribute("name", "todo")
-		input.setAttribute("onclick", 'move(this)')
-
-		span.appendChild(valueNode);
-		label.appendChild(input);
-		label.appendChild(span);
-		li.appendChild(label);
-
-		listNode.appendChild(li)
 		store(todoText)
 
 		document.querySelector('#todo').value = ''
