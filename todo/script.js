@@ -45,11 +45,11 @@ function move(target) {
 	if (target.checked) {
 		completedList.appendChild(currentItem)
 		list.set(currentItem.innerText, true);
-		localStorage.setItem(target.parentElement.parentElement.innerText, true)
+		localStorage.setItem(currentItem.innerText, true)
 	} else {
 		pendingList.appendChild(currentItem)
 		list.set(currentItem.innerText, false);
-		localStorage.setItem(target.parentElement.parentElement.innerText, false)
+		localStorage.setItem(currentItem.innerText, false)
 	}
 }
 
