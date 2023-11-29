@@ -9,9 +9,11 @@ function move(target) {
 	if (target.checked) {
 		completedList.appendChild(currentItem)
 		list.set(currentItem.innerText, true);
+		localStorage.setItem(target.parentElement.parentElement.innerText, true)
 	} else {
 		pendingList.appendChild(currentItem)
 		list.set(currentItem.innerText, false);
+		localStorage.setItem(target.parentElement.parentElement.innerText, false)
 	}
 }
 
@@ -47,7 +49,7 @@ function add(text = '', complete = false) {
 		listNode.appendChild(item.li);
 
 		list.set(todoText, complete);
-
+		localStorage[todoText] = complete;
 		document.querySelector('#todo').value = ''
 	}
 }
@@ -57,5 +59,12 @@ function remove() {
 	items.forEach((element) => {
 		element.parentElement.parentElement.remove();
 		list.delete(element.parentElement.parentElement.innerText);
+		localStorage.removeItem(element.parentElement.parentElement.innerText);
 	});
+}
+
+if (localStorage.length) {
+	Object.entries(localStorage).forEach((item) => {
+		list.set(item[0], item[1]);
+	})
 }
