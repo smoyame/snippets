@@ -32,12 +32,12 @@
 		</div>
 		<script type="application/javascript">
 			let today = new Date();
-			let formattedDate = today.toLocaleDateString("en-us", {
+			let formattedDate = Intl.DateTimeFormat("en-us", {
 				weekday: "long",
 				year: "numeric",
 				month: "long",
 				day: "numeric",
-			});
+			}).format(today);
 			document.querySelector(".header").textContent = formattedDate
 		</script>
 		<script src="script.js"></script>
