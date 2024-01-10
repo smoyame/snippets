@@ -23,9 +23,10 @@ function newLi() {
 
 const pendingList = document.querySelector('.pending .todo-list');
 const completedList = document.querySelector('.complete .todo-list');
+const todoInput = document.querySelector('#todo');
 function add(text = '', complete = "false") {
 	let listNode = complete == "false" ? pendingList : completedList;
-	let todoText = document.querySelector('#todo').value.match(/[^\s].*[^\s]/g) ? document.querySelector('#todo').value.match(/[^\s].*[^\s]/g) : text ? text : null;
+	let todoText = todoInput.value.match(/[^\s].*[^\s]/g) ? todoInput.value.match(/[^\s].*[^\s]/g) : null;
 	let valueNode = document.createTextNode(todoText);
 	if (todoText) {
 		let item = newLi();
@@ -37,7 +38,7 @@ function add(text = '', complete = "false") {
 
 		list.set(todoText, complete);
 		localStorage[todoText] = complete;
-		document.querySelector('#todo').value = ''
+		todoInput.value = ''
 	}
 }
 
