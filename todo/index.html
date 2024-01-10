@@ -10,25 +10,27 @@
 
 	<body>
 		<div class="wrapper">
-			<header class="header">Today</header>
-			<main class="main">
-				<form class="input-wrapper" onsubmit="return false">
-					<label for="todo" class="label todo-heading">What do you need to do today?</label>
-					<div class="todo-input">
-						<input type="text" name="todo" id="todo" class="todo-input-field" placeholder="Ex: Wash dishes" />
-						<button type="submit" onclick="add()">Add</button>
+			<div class="app">
+				<header class="header subtle">Today</header>
+				<main class="main">
+					<form class="input-wrapper" onsubmit="return false">
+						<label for="todo" class="label todo-heading">What do you need to do today?</label>
+						<div class="todo-input">
+							<input type="text" name="todo" id="todo" class="todo-input-field" placeholder="Ex: Wash dishes" />
+							<button type="submit" onclick="add()">Add</button>
+						</div>
+					</form>
+					<div class="todo-wrapper pending">
+						<ul class="todo-list"></ul>
 					</div>
-				</form>
-				<div class="todo-wrapper pending">
-					<ul class="todo-list"></ul>
-				</div>
-				<div class="todo-wrapper complete">
-					<ul class="todo-list"></ul>
-				</div>
-			</main>
-			<footer class="footer">
-				<button type="button" onclick="remove()">Clean Up</button>
-			</footer>
+					<div class="todo-wrapper complete">
+						<ul class="todo-list"></ul>
+					</div>
+				</main>
+				<footer class="footer">
+					<button type="button" onclick="remove()">Clean Up</button>
+				</footer>
+			</div>
 		</div>
 		<script type="application/javascript">
 			let today = new Date();
