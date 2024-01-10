@@ -28,8 +28,7 @@
 }
 
 body {
-	display: flex;
-	justify-content: center;
+	background-color: #f0f0f0;
 }
 
 input,
@@ -54,26 +53,41 @@ ul {
 }
 
 .wrapper {
+	margin-top: 10ch;
+	display: flex;
+	justify-content: center;
+}
+
+.app {
 	margin: var(--unit-half);
 	padding: var(--unit-half);
-	background-color: #f0f0f0;
+	background-color: #fafafa;
 	border-radius: var(--radius);
 	max-width: 50ch;
+	height: auto;
+	filter: drop-shadow(0px 0px 4px rgb(226, 226, 226));
+	display: flex;
+	flex-direction: column;
+	gap: var(--unit-half);
 }
 
 .header {
-	font-size: var(--fsz-small);
-	margin-bottom: var(--unit-base);
+	margin-bottom: var(--unit-half);
 	padding: var(--unit-half) var(--unit-half) 0;
-	color: gray;
+}
+
+.subtle {
+	font-size: var(--fsz-small);
 	font-weight: 500;
 	letter-spacing: var(--ls-small);
+	color: gray;
 }
 
 .input-wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: var(--unit-quarter);
+	gap: var(--unit-half);
+	margin-bottom: var(--unit-half);
 	padding: 0 var(--unit-half) var(--unit-half);
 }
 
@@ -130,10 +144,10 @@ ul {
 }
 
 .todo-item-wrapper:hover {
-	background: #fafafa;
+	background: #ffffff;
 	cursor: pointer;
 	border-radius: calc(var(--radius) * .5);
-	filter: drop-shadow(0px 0px 4px rgb(220, 220, 220));
+	filter: drop-shadow(0px 0px 5px rgb(220, 220, 220));
 }
 
 .todo-checkbox + .todo-text {
@@ -144,6 +158,10 @@ ul {
 .todo-checkbox:checked + .todo-text {
 	opacity: .5;
 	font-weight: initial;
+}
+
+.todo-timestamp {
+	color: purple;
 }
 
 footer {
