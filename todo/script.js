@@ -1,5 +1,5 @@
 // script.js
-let list = new Map();
+let list = localStorage.list ? new Map(JSON.parse(localStorage.list)) : new Map();
 
 function newLi() {
 	let li = document.createElement("li");
@@ -16,7 +16,6 @@ function newLi() {
 	input.setAttribute("name", "todo")
 	input.setAttribute("onclick", 'move(this)')
 	label.appendChild(input);
-
 	let itemInfo = { li: li, span: span, label: label }
 	return (itemInfo)
 }
@@ -24,50 +23,64 @@ function newLi() {
 const pendingList = document.querySelector('.pending .todo-list');
 const completedList = document.querySelector('.complete .todo-list');
 const todoInput = document.querySelector('#todo');
-function add(text = '', complete = "false") {
-	let listNode = complete == "false" ? pendingList : completedList;
-	let todoText = todoInput.value.match(/[^\s].*[^\s]/g) ? todoInput.value.match(/[^\s].*[^\s]/g) : null;
+const timestampAttr = "data-timestamp";
+function add(timestamp = 0, value = { text: '', complete: false }) {
+
+	const now = timestamp ? timestamp : Date.now();
+	let completed = value.complete == true;
+	let listNode = value.complete ? completedList : pendingList;
+	let todoText = todoInput.value.match(/[^\s].*[^\s]/g) ? todoInput.value.match(/[^\s].*[^\s]/g)[0] : value.text ? value.text : '';
 	let valueNode = document.createTextNode(todoText);
+
 	if (todoText) {
 		let item = newLi();
 		item.span.appendChild(valueNode);
 		item.label.appendChild(item.span);
 		item.li.appendChild(item.label);
-		item.li.querySelector('input').checked = complete == "true" ? true : false;
+		item.li.querySelector('input').checked = completed;
+		item.li.setAttribute(timestampAttr, now);
 		listNode.appendChild(item.li);
 
-		list.set(todoText, complete);
-		localStorage[todoText] = complete;
-		todoInput.value = ''
+		let itemObj = { text: todoText, complete: completed };
+		list.set(now, itemObj);
+		localStorage.list = JSON.stringify(Array.from(list));
+		todoInput.value = '';
 	}
 }
 
 function move(target) {
-	let currentItem = target.parentElement.parentElement;
+	let currentLi = target.parentElement.parentElement;
+	const key = Number(currentLi.attributes[timestampAttr].value);
+	let text = currentLi.innerText;
+	let completed;
+
 	if (target.checked) {
-		completedList.appendChild(currentItem)
-		list.set(currentItem.innerText, true);
-		localStorage.setItem(currentItem.innerText, true)
+		completedList.appendChild(currentLi);
+		completed = true;
+		list.set(key, { text: text, complete: completed });
 	} else {
-		pendingList.appendChild(currentItem)
-		list.set(currentItem.innerText, false);
-		localStorage.setItem(currentItem.innerText, false)
+		pendingList.appendChild(currentLi);
+		completed = false;
+		list.set(key, { text: text, complete: completed });
 	}
+	localStorage.list = JSON.stringify(Array.from(list));
 }
 
 function remove() {
-	let items = document.querySelectorAll('[name="todo"]:checked');
-	items.forEach((element) => {
-		let li = element.parentElement.parentElement
-		li.remove();
-		list.delete(li.innerText);
-		localStorage.removeItem(li.innerText);
-	});
+	let completedItems = document.querySelectorAll('.complete li');
+	console.log(completedItems);
+	completedItems.forEach((element) => {
+		const key = Number(element.attributes[timestampAttr].value);
+		element.remove();
+		list.delete(key);
+		localStorage.list = JSON.stringify(Array.from(list));
+	})
 }
 
-if (localStorage.length) {
-	Object.entries(localStorage).forEach((item) => {
-		list.set(item[0], item[1]);
-		add(item[0], item[1]);
-	})
+if (localStorage.list) {
+	JSON.parse(localStorage.list).forEach((item) => {
+		let key = item[0];
+		let value = item[1];
+		add(key, value);
+	});
 }
