@@ -1,0 +1,105 @@
+:root {
+	/* Type */
+	--ff-body: 'Inter', Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+	--ff-heading: 'Radio Canada Big';
+
+	--fs-0: clamp(1rem, calc(.75rem + .5vw), calc(.75rem + .5vw));
+	--fs-hA: clamp(2rem, calc(1.5rem + 1.5vw), calc(1.5rem + 1.5vw));
+	--fs-hB: clamp(2rem, calc(1.5rem + 1.5vw), calc(1.5rem + 1.5vw));
+
+	/* Colors */
+	--clr-accent: #27dda6;
+	--clr-lightest: #eeeeee;
+	--clr-lighter: #d9d9d9;
+	--clr-light: #a9a9a9;
+	--clr-dark: #6a6a6a;
+	--clr-darker: #3f3f3f;
+	--clr-darkest: #2a2a2a;
+
+	--clr-night: #2a2a2a;
+	--clr-bright: white;
+
+	--fg: var(--clr-night);
+	--bg: var(--clr-bright);
+
+	accent-color: var(--clr-accent);
+
+	/* Spacing Units */
+	--spacer-0: .25rem;
+	--spacer-1: .5rem;
+	--spacer-2: .75rem;
+	--spacer-3: 1rem;
+	--spacer-4: 2rem;
+	--spacer-5: 4rem;
+
+	--spacer-br: 1.5em;
+
+	/* Animation/Transition Ease */
+	--timing-function-main: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+*:not(h1, h2, h3, h4, h5, h6, p, li, ul, ol, blockquote) {
+	margin: 0;
+	padding: 0;
+}
+
+::selection {
+	background: var(--clr-accent);
+	color: var(--bg);
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	border-radius: 0px;
+	border-width: 1px;
+	border-color: darkgray;
+	border-style: solid;
+}
+
+img,
+picture,
+video,
+canvas,
+svg,
+[src*="youtube"],
+[src*="vimeo"],
+[src*="mp4"] {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+img {
+	font-style: italic;
+	vertical-align: middle;
+	height: auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+	shape-margin: 1rem;
+	image-rendering: crisp-edges;
+}
+
+/* Page */
+
+body {
+	font: normal var(--fs-0)/1.5 var(--ff-body);
+	background-color: var(--clr-lightest);
+}
+
+input,
+button,
+textarea,
+select {
+	padding: .5em 1em;
+}
