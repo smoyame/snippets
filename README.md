@@ -4,7 +4,7 @@ Got some smalluns I want to make while waiting on loading screens!
 
 ## Mini Projects:
 * Todo List
-* Timer
+* Clipboard Formatting Checker
 * Tiny Drawpad
 
 ### Todo List
