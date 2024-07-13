@@ -124,3 +124,15 @@ td,
 th {
 	padding: .5em .55em;
 }
+
+.main-tool {
+	display: flex;
+}
+
+.feed-in {
+	flex: 1 0 auto;
+}
+
+.feed-out {
+	flex: 3 1 auto;
+}
