@@ -1,0 +1,1 @@
+let dataRows = document.getElementById('output-table')
