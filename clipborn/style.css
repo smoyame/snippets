@@ -90,7 +90,7 @@ img {
 	image-rendering: crisp-edges;
 }
 
-/* Page */
+/* -------------------------------------------------------------- */
 
 body {
 	font: normal var(--fs-0)/1.5 var(--ff-body);
@@ -102,4 +102,25 @@ button,
 textarea,
 select {
 	padding: .5em 1em;
+}
+
+table {
+	table-layout: fixed;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+th:first-of-type {
+	width: 20%;
+}
+
+th:last-of-type {
+	width: 50%;
+}
+
+td,
+th {
+	padding: .5em .55em;
 }
