@@ -56,6 +56,10 @@
 	color: var(--bg);
 }
 
+p:only-of-type {
+	margin: 0;
+}
+
 input,
 button,
 textarea,
@@ -97,16 +101,30 @@ body {
 	background-color: var(--clr-lightest);
 }
 
+.wrapper {
+	width: min(80ch, calc(100% - 2rem));
+	margin-inline: auto;
+}
+
+h1 {
+	font-size: var(--fs-hA);
+	margin-bottom: 0;
+}
+
 input,
 button,
 textarea,
 select {
+	width: 100%;
 	padding: .5em 1em;
+}
+
+button {
+	cursor: pointer;
 }
 
 table {
 	table-layout: fixed;
-	width: 100%;
 	text-align: left;
 	border-collapse: collapse;
 	border: 1px solid black;
@@ -125,14 +143,32 @@ th {
 	padding: .5em .55em;
 }
 
+/* Layout */
+
+header {
+	margin-block: var(--spacer-5);
+}
+
 .main-tool {
 	display: flex;
+	gap: var(--spacer-4);
+	flex-wrap: wrap;
 }
 
 .feed-in {
-	flex: 1 0 auto;
+	flex: 1 1 250px;
+}
+
+.timestamp {
+	font-size: .75em;
+	opacity: 0;
 }
 
 .feed-out {
 	flex: 3 1 auto;
+	display: flex;
+}
+
+.output-table {
+	flex: 1;
 }
