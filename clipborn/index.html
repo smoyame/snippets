@@ -16,7 +16,6 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
-
 		<link rel="stylesheet" href="style.css">
 		<script src="script.js" defer></script>
 	</head>
@@ -31,8 +30,8 @@
 				<div class="main-tool">
 					<div class="feed-in">
 						<div class="fi_click">
-							<button type="button" class="fi_button" onclick="getTimeStamp()">Check</button>
-							<p class="timestamp" aria-hidden>Last updated at <time id="time" datetime="">TIME_STAMP</time></p>
+							<button type="button" class="fi_button" onclick="updateTimeStamp()">Check</button>
+							<p class="timestamp" aria-hidden>Last updated at <time id="time" datetime=""></time> on <time id="date" datetime=""></time></p>
 						</div>
 					</div>
 					<div class="feed-out">
