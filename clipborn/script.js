@@ -3,16 +3,24 @@ let time = document.querySelector('#time')
 let date = document.querySelector('#date')
 
 function updateTimeStamp() {
+	let locale = navigator.languages[0]
 	let lastUse = new Date()
-	let lastUseDateCA = lastUse.toLocaleDateString('en-CA', { year: "numeric", month: "2-digit", day: "2-digit" })
-	let lastUseDateUS = lastUse.toLocaleDateString('en-US', { year: "numeric", month: "2-digit", day: "2-digit" })
-	let lastUseTime = lastUse.toLocaleTimeString('en-US', { timeStyle: "short", hour12: false })
+	let tzShort = Intl.DateTimeFormat(locale, {
+		timeZoneName: "short"
+	}).format(lastUse).match(/(?<=\,\s).*$/g)
 
-	time.attributes.datetime.value = lastUseTime
-	time.innerText = lastUseTime
+	let dateUsed = lastUse.toLocaleDateString(locale)
+	let dateCA = lastUse.toLocaleDateString('en-CA')
+	let timeUsed = lastUse.toLocaleTimeString(locale, {
+		timeStyle: "short",
+		hour12: false
+	})
 
-	date.attributes.datetime.value = lastUseDateCA
-	date.innerText = lastUseDateUS
+	time.attributes.datetime.value = timeUsed
+	time.innerText = `${timeUsed} ${tzShort}`
+
+	date.attributes.datetime.value = dateCA
+	date.innerText = dateUsed
 
 	if (!timestampGraf.style.opacity) {
 		timestampGraf.style.opacity = 1
