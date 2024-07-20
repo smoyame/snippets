@@ -135,13 +135,30 @@ th {
 	border: 1px solid lightslategray;
 }
 
-th:first-of-type {
+th[data-column="index"] {
 	width: 3ch;
 }
 
-th:last-of-type {
-	width: 50%;
-	overflow: scroll;
+th[data-column="data-type"] {
+	max-width: 5ch;
+}
+
+th[data-column="preview"] {
+	flex: 1 1 24ch;
+}
+
+th[data-column="preview"] pre {
+	width: 65%;
+}
+
+td[data-column="preview"] {
+	padding: 0;
+}
+
+td[data-column="preview"] pre {
+	max-height: 14ch;
+	padding: .75em;
+	overflow-y: scroll;
 }
 
 td,
@@ -173,10 +190,6 @@ td:empty::before {
 
 td > pre:empty::before {
 	content: 'Waiting...';
-}
-
-td[data-column="preview"] {
-	flex: 1 1 24ch;
 }
 
 /* Layout */

@@ -33,7 +33,7 @@ let origRow = document.querySelector('[data-table="row-template"]')
 const templateRow = origRow
 let genericRowContents = document.querySelector('[data-table="row-template"]').innerHTML
 
-function newRow(type, attr, content, index = "00") {
+function newRow(type, content, index = "00") {
 	let timestamp = Date.now()
 	let newRow = templateRow.cloneNode(true)
 
@@ -42,7 +42,6 @@ function newRow(type, attr, content, index = "00") {
 
 	newRow.querySelector('[data-column="index"]').innerText = index
 	newRow.querySelector('[data-column="data-type"]').innerText = type
-	newRow.querySelector('[data-column="attribute"]').innerText = attr
 	newRow.querySelector('[data-column="preview"] pre').innerText = content
 
 	if (templateRow) {
@@ -64,7 +63,7 @@ if (navigator.clipboard) {
 				let blobText = await blob.bytes()
 				let decodedText = decoder.decode(blobText)
 
-				newRow(selectedType, "ATTR", decodedText)
+				newRow(selectedType, decodedText)
 				console.log(selectedType)
 			}
 		} catch (err) {
