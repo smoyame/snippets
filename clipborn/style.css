@@ -127,20 +127,56 @@ table {
 	table-layout: fixed;
 	text-align: left;
 	border-collapse: collapse;
-	border: 1px solid black;
+
+}
+
+th {
+	background: #e0e0e0;
+	border: 1px solid lightslategray;
 }
 
 th:first-of-type {
-	width: 20%;
+	width: 3ch;
 }
 
 th:last-of-type {
 	width: 50%;
+	overflow: scroll;
 }
 
 td,
 th {
-	padding: .5em .55em;
+	padding: .5em .75em;
+}
+
+table,
+td {
+	border: 1px solid lightgray;
+}
+
+tr {
+	max-height: fit-content;
+}
+
+td pre {
+	max-width: 100%;
+	text-wrap: wrap;
+}
+
+td:empty::before {
+	content: '......';
+	display: inline-block;
+	background: #e0e0e0;
+	padding: .5em .5em;
+	border-radius: .25em;
+}
+
+td > pre:empty::before {
+	content: 'Waiting...';
+}
+
+td[data-column="preview"] {
+	flex: 1 1 24ch;
 }
 
 /* Layout */
@@ -155,24 +191,55 @@ header {
 	flex-wrap: wrap;
 }
 
-.feed-in {
-	flex: 1 1 250px;
-}
-
 .timestamp {
 	font-size: .75em;
-	margin-top: .5em;
+	margin-top: 1em;
 }
 
 .timestamp[aria-hidden] {
 	opacity: 0;
 }
 
+.feed-in {
+	flex: 1 1 250px;
+}
+
 .feed-out {
-	flex: 3 1 auto;
+	flex: 3 1 50%;
 	display: flex;
+	align-self: flex-start;
 }
 
 .output-table {
 	flex: 1;
+}
+
+.input-wrapper {
+	position: relative;
+	min-height: ch;
+}
+
+.input-wrapper:where(:focus-within, :focus, :focus-visible, :target, :active, :hover) {
+	outline: 1px solid red;
+	outline-offset: 4px
+}
+
+.fi-area {
+	display: flex;
+	background-color: var(--clr-lightest);
+	width: 100%;
+	min-height: 12ch;
+	border: 4px dashed var(--clr-light);
+	align-items: center;
+	justify-content: center;
+}
+
+.fi-input {
+	display: block;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	cursor: copy;
 }
